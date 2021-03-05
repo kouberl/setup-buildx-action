@@ -2218,6 +2218,7 @@ function download(version) {
         let downloadPath;
         try {
             core.info(`⬇️ Downloading ${downloadUrl}...`);
+          core.info(" My own logging test");
             downloadPath = yield tc.downloadTool(downloadUrl);
             core.debug(`Downloaded to ${downloadPath}`);
         }
