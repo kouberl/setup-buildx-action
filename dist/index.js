@@ -1758,11 +1758,11 @@ TunnelingAgent.prototype.createSocket = function createSocket(options, cb) {
   if (options.localAddress) {
     connectOptions.localAddress = options.localAddress;
   }
-  if (connectOptions.proxyAuth) {
-    connectOptions.headers = connectOptions.headers || {};
-    connectOptions.headers['Proxy-Authorization'] = 'Basic ' +
-        new Buffer(connectOptions.proxyAuth).toString('base64');
-  }
+  //if (connectOptions.proxyAuth) {
+  //  connectOptions.headers = connectOptions.headers || {};
+  //   connectOptions.headers['Proxy-Authorization'] = 'Basic ' +
+  //      new Buffer(connectOptions.proxyAuth).toString('base64');
+  //}
 
   debug('making CONNECT request');
   var connectReq = self.request(connectOptions);
@@ -8791,7 +8791,7 @@ class HttpClient {
                 maxSockets: maxSockets,
                 keepAlive: this._keepAlive,
                 proxy: {
-                    proxyAuth: `${proxyUrl.username}:${proxyUrl.password}`,
+                    //proxyAuth: `${proxyUrl.username}:${proxyUrl.password}`,
                     host: proxyUrl.hostname,
                     port: proxyUrl.port
                 }
